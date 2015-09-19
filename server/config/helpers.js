@@ -11,6 +11,7 @@ module.exports = {
   errorHandler: function (error, req, res, next) {
     // send error message to client
     // message for gracefull error handling on app
+    console.log(req.data)
     res.send(500, {error: error.message});
   },
 

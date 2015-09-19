@@ -1,3 +1,17 @@
 <div id='container'>
   <!-- Your html here -->
+  <input type='text' ng-model="search" placeholder="filter"></input>
+  <div>
+    <div ng-repeat="l in data.links | filter:search">
+      <div class="link">
+        <img src="assets/redirect_icon.png">
+        <div class="info">
+          <div class="visits"><span class="count">{{l.visits}}</span>Visits</div>
+          <div class="title">{{l.title}}</div>
+          <div class="original">{{l.url}}</div>
+          <a href="{{l.base_url}}/api/links/{{l.code}}">{{l.base_url}}/api/links/{{l.code}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
