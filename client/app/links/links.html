@@ -2,7 +2,7 @@
   <!-- Your html here -->
   <input type='text' ng-model="search" placeholder="filter"></input>
   <div>
-    <div ng-repeat="l in data.links | filter:search">
+    <div ng-repeat="l in data.links | filter:search | orderBy: '-visits'">
       <div class="link">
         <img src="assets/redirect_icon.png">
         <div class="info">
@@ -15,3 +15,5 @@
     </div>
   </div>
 </div>
+
+<!-- orderBy: 'created_at' -->

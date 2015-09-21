@@ -17,6 +17,14 @@ angular.module('shortly.auth', [])
       });
   };
 
+  $scope.isError = function(input) {
+    console.log(input)
+    console.log(input.$pristine)
+    console.log(input.$invalid)
+    return input.$pristine || input.$invalid;
+    
+  }
+
   $scope.signup = function () {
     Auth.signup($scope.user)
       .then(function (token) {

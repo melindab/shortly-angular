@@ -1,7 +1,11 @@
 <div id='container'>
 <!-- Your code here -->
-  <input type="text" ng-model="ourUrl" placeholder="url"></input>
-  <button type="submit" ng-click="addLink(ourUrl);">Add Link!!!</button>
+  <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
+    <input ng-class="{error: userForm.url.$invalid, clean: userForm.url.$valid}" type="url" name="url" ng-model="ourUrl" placeholder="url" required></input>
+    <button type="submit" ng-click="addLink(ourUrl);">Add Link!!!</button>
+  </form>
+  <h3 ng-if="userForm.url.$error.required" ng-model="errors"> Required URL </h3>
+  <h3 ng-if="userForm.url.$invalid" ng-model="errors"> Must have valid url </h3>
+  
 </div>
-
 
